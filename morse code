@@ -1,0 +1,51 @@
+int key = LED_BUILTIN ; 
+int dotd = 800;
+int dashd = 1600;
+void setup() {
+pinMode(key , OUTPUT); 
+}
+
+void dot ()
+{
+  digitalWrite(key , HIGH);
+  delay(dotd);
+  digitalWrite(key , LOW);
+  delay(1000);
+}
+
+void dash()
+{
+  digitalWrite(key , HIGH);
+  delay(dashd); 
+  digitalWrite(key, LOW);
+  delay(1000);  
+}
+void loop() 
+{
+  // for "M" :- 
+  dash(); 
+  dash(); 
+  delay(1500);
+
+  // for "E" :-
+  dot();
+  delay(1500);
+
+  // for "H" :- 
+  dot();
+  dot();
+  dot();
+  dot(); 
+  delay(1500);
+
+  // for "A" :-
+  dot(); 
+  dash(); 
+  delay(1500);
+
+  // for "K" :- 
+  dash(); 
+  dot();
+  dash(); 
+  delay(1500);
+}
